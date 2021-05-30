@@ -1,0 +1,56 @@
+@import 'responsive'
+
+.reasons
+	background-color: #f6f6f6
+	padding-top: 70px
+	padding-bottom: 35px
+	&__wrap
+		display: flex
+		flex-wrap: wrap
+		padding-top: 32px
+		margin: 0 -20px
+		+media(sm)
+			margin: 0 auto
+
+	&__item
+		width: calc(100% / 4 - 40px)
+		margin: 0 20px
+		margin-bottom: 35px
+		+media(mdx)
+			width: calc(100% / 2 - 40px)
+		+media(sm)
+			width: 100%
+			margin: 0 auto
+			margin-bottom: 35px
+
+	&__icon	
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 78px
+		height: 78px
+		border-radius: 50%
+		background-color: #68bec4
+		margin: 0 auto
+		margin-bottom: 25px
+		i
+			font-size: 32px
+			color: #fff
+
+	&__title
+		font-size: 20px
+		line-height: 1
+		color: #20202c
+		text-align: center
+		letter-spacing: 0.4px
+		padding-bottom: 12px
+		font-weight: 700
+		+media(md)
+			font-size: 18px
+
+	&__desc
+		p
+			font-size: 14px
+			line-height: 1.6
+			text-align: center
+			font-weight: 300

@@ -1,0 +1,101 @@
+@import 'responsive'
+
+.reviews
+	padding-bottom: 115px
+	&__holder
+		transform: translateY(-100%)
+		animation-delay: 0.3s
+		transition: 0.5s transform
+
+	&__wrap
+		margin: 0 -20px
+		+media(md)
+			margin: 0px
+
+	&__item
+		padding-top: 32px
+		margin: 0 20px
+		+media(md)
+			margin: 0px
+
+	&__text
+		padding-bottom: 38px
+		p
+			font-size: 14px
+			line-height: 1.6
+			color: #686868
+			font-weight: 30
+
+	&__inner
+		display: flex
+		align-items: center
+		padding-right: 105px	
+		+media(xs)
+			padding-right: 0px
+
+	&__icon
+		width: 140px
+		img
+			display: block
+			width: 100%
+
+	&__content
+		width: calc(100% - 140px)
+		padding-left: 30px
+
+	&__title
+		font-size: 16px
+		line-height: 1.44
+		color: #20202c
+		font-weight: 600
+
+	&__block
+		font-size: 14px
+		line-height: 1.6
+		color: #20202c
+		font-weight: 300
+
+	&__row
+		position: relative
+
+	&__wrap-btn
+		display: flex
+		position: absolute
+		bottom: 20px
+		right: 0px
+		+media(xs)
+			position: static
+			margin-top: 20px
+
+	&__btn
+		cursor: pointer
+		position: relative
+		display: block
+		width: 44px
+		height: 44px
+		background-color: #68bec4
+		color: #ffffff
+		border: none
+		outline: none
+		transition: 0.3s background-color
+		&:hover
+			background-color: rgba(32,32,44,0.34)
+			
+		&--dir_left
+			margin-right: 15px
+
+		&--dir_left,
+		&--dir_right
+			&:after
+				position: absolute
+				content: ' '
+				width: 10px
+				height: 10px
+				top: calc(50% - 5px)
+				left: calc(50% - 3px)
+				border-left: 4px solid #fff
+				border-top: 4px solid #fff
+				transform: rotate(-45deg)
+
+		&--dir_right
+			transform: scaleX(-1)

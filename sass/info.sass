@@ -1,0 +1,89 @@
+@import 'responsive'
+
+.info
+
+	&__wrap
+		margin-bottom: 120px
+		.container
+			transform: translate(0, 100%)
+			opacity: 0
+
+		.slick-active .container
+			animation: view 0.3s linear forwards
+			animation-delay: 0.3s
+
+	&__item
+		padding-top: 70px
+
+	&__subtitle
+		font-size: 90px
+		line-height: 1
+		color: #fff
+		text-align: center
+		margin-bottom: 20px
+		font-weight: 800
+		+media(mdx)
+			font-size: 55px
+		+media(sm)
+			font-size: 33px
+		span
+			display: block
+			font-size: 36px
+			letter-spacing: 6px
+			text-transform: uppercase
+			padding-bottom: 12px
+			font-weight: 300
+			+media(sm)
+				font-size: 30px
+
+	&__desc
+		text-align: center
+		p
+			font-size: 18px
+			line-height: 2
+			letter-spacing: 1.8px
+			color: #fff
+			padding-bottom: 1.8em
+			font-weight: 300
+			+media(sm)
+				font-size: 15px
+
+	&__dots-list
+		display: flex
+		justify-content: center
+		align-items: center
+		padding-bottom: 85px
+		li
+			cursor: pointer
+			width: 8px
+			height: 8px
+			border-radius: 50%
+			background-color: #fff
+			display: flex
+			align-items: center
+			justify-content: center
+			&:not(:last-child)
+				margin-right: 15px
+
+			button
+				cursor: pointer
+				font-size: 0px
+				width: 100%
+				height: 100%	
+				border: none
+				outline: none
+				padding: 0px
+				border-radius: 50%
+				background-color: transparent
+
+			&.slick-active
+				width: 13px
+				height: 13px
+				background-color: #68bec1
+
+
+@keyframes view
+	100%
+		transform: translate(0, 0)
+		opacity: 1
+

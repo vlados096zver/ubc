@@ -1,0 +1,271 @@
+@import 'responsive'
+
+.single-news
+	padding-top: 80px
+	&__wrap	
+		display: flex
+		flex-wrap: wrap
+		border-bottom: 1px solid #e3e2e7
+		padding-bottom: 40px
+
+	&__item
+		&--aside
+			width: 78px
+			+media(smdx)
+				width: 100%
+				display: flex
+				justify-content: space-between
+				padding-bottom: 15px
+
+		&--content
+			width: calc(100% - 78px)
+			padding-left: 30px
+			+media(smdx)
+				width: 100%
+				padding-left: 0px
+
+	&__time
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		width: 78px
+		height: 78px
+		background-color: #f6f6f6
+		border-radius: 100%
+		padding: 5px
+		margin-bottom: 30px
+		transition: 0.3s background-color	
+		+media(sm)
+			margin-bottom: 20px
+		&:hover	
+			background-color: #68bec4
+			.single-news__day,
+			.single-news__month
+				color: #fff
+
+	&__day
+		display: block
+		font-size: 19px
+		line-height: 1.3
+		color: #2c343c
+		text-align: center
+		font-weight: 800
+		transition: 0.3s color
+
+	&__month
+		display: block
+		font-size: 13px
+		line-height: 1.4
+		color: #68bec4	
+		text-align: center
+		text-transform: uppercase
+		font-weight: 600
+		transition: 0.3s color
+
+	&__socials
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		+media(smdx)
+			flex-direction: row
+			margin: 0 -16px
+		+media(mini)
+			margin: 0 -12px
+
+	&__box	
+		display: block
+		width: 20px
+		height: 20px
+		margin-bottom: 25px
+		+media(smdx)
+			margin: 0 16px
+			margin-bottom: 30px
+		+media(sm)
+			margin-bottom: 20px
+		+media(mini)
+			margin: 0 12px
+			margin-bottom: 30px
+		i
+			display: block
+			color: #d0d0d4
+			transition: 0.3s color
+			font-family: 'nc-icon-mini'
+
+		&:hover
+			i
+				color: #4f9499
+
+	&__title
+		font-size: 20px
+		line-height: 1.3
+		color: #20202c
+		margin-bottom: 20px
+		font-weight: 800
+		transition: 0.3s color
+		+media(lgsm)
+			font-size: 15px
+
+	&__inner
+		display: flex
+		align-items: center
+		padding-bottom: 36px
+
+	&__elem
+		font-size: 16px
+		padding-right: 5px
+			
+	&__main
+		color: #68bec4
+		transition: 0.3s color
+		&:hover
+			color: #686868
+
+	&__link
+		color: #686868
+		transition: 0.3s color
+		&:hover
+			color: #68bec4
+
+	&__count
+		position: relative
+		font-size: 16px
+		color: #686868
+		padding-left: 20px
+		&:after
+			position: absolute
+			content: '\ea3c'
+			top: 50%
+			transform: translateY(-50%)
+			left: 0px
+			font-size: 14px
+			color: rgb(155,155,155)
+			font-family: 'nc-icon-mini'
+
+	&__image
+		margin-bottom: 35px
+		img
+			display: block
+
+	&__text
+		font-size: 14px
+		line-height: 1.6
+		color: #686868
+		padding-bottom: 48px
+		font-weight: 300
+
+	&__star
+		display: flex
+		align-items: center
+
+	&__holder
+		font-size: 16px
+		line-height: 1.75
+		color: #686868
+		font-weight: 300
+
+	&__row
+		display: flex
+		justify-content: space-between
+		padding-top: 40px
+		padding-bottom: 120px
+
+	&__btn
+		display: block
+		cursor: pointer
+		position: relative
+		max-width: 154px
+		width: 100%
+		font-size: 12px
+		color: #fff
+		background-color: #68bec4
+		border: none
+		outline: none
+		padding: 14px 5px
+		padding-bottom: 15px
+		text-transform: uppercase
+		font-weight: 800
+		transition: 0.3s background-color
+		&:hover
+			background-color: #4f9499
+
+		&--prev
+			text-align: left
+			padding-left: 55px
+			&:after
+				position: absolute
+				content: '\e927'
+				left: 34px
+				top: 50%
+				transform: translateY(-50%)
+				font-size: 10px
+				display: block
+				color: #fff
+				font-family: 'nc-icon-mini'
+		&--next
+			text-align: right
+			padding-right: 55px
+			&:before
+				position: absolute
+				content: '\e928'
+				top: 50%
+				transform: translateY(-50%)
+				right: 34px
+				font-size: 10px
+				display: block
+				color: #fff
+				font-family: 'nc-icon-mini'
+
+	&--all
+		padding-top: 120px
+		margin-bottom: 35px
+		+media(mdx)
+			padding-top: 80px
+
+		.single-news__wrap
+			border-bottom: none
+			padding-bottom: 15px
+
+		.single-news__item--content
+			max-width: 490px
+			+media(smdx)
+				margin: 0 auto
+				max-width: 100%	
+
+		.single-news__image
+			margin-bottom: 25px
+
+		.single-news__title
+			margin-bottom: 15px
+
+		a:hover .single-news__title
+			color: #68bec4
+
+	&__col
+		display: flex
+		flex-wrap: wrap
+		border-bottom: 1px solid #e3e2e7
+		margin: 0 -10px
+		margin-bottom: 40px
+		+media(md)
+			margin: 0px
+			margin-bottom: 40px
+
+	&--blog
+		.single-news__wrap
+			width: calc(100% / 2 - 20px)
+			max-width: 500px
+			border: none
+			padding-bottom: 15px
+			margin: 0 10px
+			+media(md)
+				width: 100%
+				margin: 0px auto
+
+		.single-news__text
+			+media(md)
+				padding-bottom: 35px
+
+		a:hover .single-news__title
+			color: #68bec4

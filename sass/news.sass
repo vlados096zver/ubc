@@ -1,0 +1,160 @@
+@import 'responsive'
+
+.news
+	padding-top: 110px
+	padding-bottom: 65px
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: top center
+	background-attachment: fixed
+	margin-bottom: 50px
+	+media(md)
+		background-attachment: scroll
+
+	.container
+		max-width: 1230px
+		+media(sm)
+			padding: 0px
+
+	&__block
+		width: 53.917%
+		background-color: rgba(58,64,94,0.95)
+		padding: 15px 35px
+		padding-bottom: 60px	
+		margin-left: auto
+		+media(mdx)
+			margin: 0px
+		+media(md)
+			width: 50%
+		+media(sm)
+			width: 100%
+			padding: 15px
+
+	&__title
+		position: relative
+		font-size: 16px
+		line-height: 1.6	
+		letter-spacing: 2.9px
+		color: #fff
+		text-transform: uppercase
+		padding-top: 20px
+		font-weight: 300
+		&:after
+			position: absolute
+			content: ' '
+			top: 0px
+			left: 0px
+			width: 70px
+			height: 3px
+			background-color: #68bec4
+
+	&__subtitle
+		font-size: 20px
+		line-height: 1.3
+		color: #fff
+		padding-bottom: 70px
+		font-weight: 800
+
+	&__inner
+		display: flex
+		align-items: center
+
+	&__author
+		font-size: 16px
+		line-height: 1.75
+		color: #fff
+		margin-right: 16px
+		margin-bottom: 11px
+		font-weight: 300
+		a
+			color: #686868
+
+	&__date
+		font-size: 16px
+		color: #686868
+		background-image: url(../img/calendar.svg)
+		background-position: left center
+		background-repeat: no-repeat
+		background-size: 18px
+		padding-left: 25px
+		margin-right: 14px
+		margin-bottom: 11px
+		font-weight: 300
+		a
+			color: inherit
+
+	&__reviews
+		font-size: 16px
+		color: #686868
+		background-image: url(../img/comments.svg)
+		background-position: left center
+		background-repeat: no-repeat
+		background-size: 20px
+		padding-left: 25px
+		margin-bottom: 11px
+		font-weight: 300
+		a
+			color: inherit
+
+	&__elem
+		display: inline-block
+		font-size: 20px
+		line-height: 1.3
+		color: #fff
+		margin-bottom: 20px
+		font-weight: 700
+
+	&__desc
+		padding-bottom: 44px
+		p
+			font-size: 14px
+			line-height: 1.6
+			color: #fff
+			font-weight: 300
+
+	&__row
+		position: relative
+
+	&__holder
+		display: flex
+		align-items: center
+		justify-content: space-between
+
+	&__wrap-btn
+		display: flex
+
+	&__btn
+		cursor: pointer
+		position: relative
+		display: block
+		width: 40px
+		height: 40px
+		background-color: #68bec4
+		color: #ffffff
+		border: none
+		outline: none
+		transition: 0.3s background-color
+		&:hover
+			background-color: #fff
+			&:after
+				border-color: #68bec4
+
+		&--dir_left
+			margin-right: 15px
+
+		&--dir_left,
+		&--dir_right
+			&:after
+				position: absolute
+				content: ' '
+				width: 10px
+				height: 10px
+				top: calc(50% - 5px)
+				left: calc(50% - 3px)
+				border-left: 2px solid #fff
+				border-top: 2px solid #fff
+				transform: rotate(-45deg)
+				transition: 0.3s border
+
+		&--dir_right
+			transform: scaleX(-1)

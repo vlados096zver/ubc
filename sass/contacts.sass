@@ -1,0 +1,97 @@
+@import 'responsive'
+
+.contacts
+	margin-bottom: 35px
+	&__wrap
+		display: flex
+		flex-wrap: wrap
+		margin: 0 -40px
+		+media(mdx)
+			margin: 0px
+
+	&__item
+		width: calc(50% - 80px)
+		margin: 0 40px
+		+media(mdx)
+			width: 100%
+			margin: 0px
+
+	&__label
+		display: inline-block
+		font-size: 16px
+		color: #2c343c
+		margin-bottom: 4px
+		font-weight: 600
+
+	&__holder
+		max-width: 78%
+		+media(mdx)
+			max-width: 100%
+
+	&__row
+		display: flex
+		flex-wrap: wrap
+		padding-top: 40px
+		margin: 0 -20px
+		+media(lgsm)
+			margin: 0px
+
+	&__box
+		width: calc(50% - 40px)
+		margin: 0 20px
+		margin-bottom: 15px
+		+media(lgsm)
+			width: 100%
+			margin: 0px
+			margin-bottom: 15px
+
+	&__wrap-select
+		position: relative
+		&:after
+			position: absolute
+			content: ' '
+			width: 10px
+			height: 10px
+			right: 18px
+			top: calc(50% + 3px)
+			transform: translateY(-50%)
+			border: 5px solid transparent
+			border-top: 5px solid #2c343c
+			display: inline-block
+			z-index: 1
+			pointer-events: none
+
+	&__select
+		display: block
+		width: 100%
+		appearance: none
+		font-size: 14px
+		color: #686868
+		padding: 10px 25px
+		border: 1px solid #e3e2e7
+		option
+			padding: 0 25px
+
+	&__map
+		transform: translateX(-100%)
+		height: 100%
+		min-height: 570px
+		iframe
+			display: block
+			width: 100%
+			height: 100%
+
+	&__desc
+		transform: translateX(100%)
+		+media(mdx)
+			max-width: 860px
+			padding: 0 15px
+			margin: 0 auto
+
+	&__map,
+	&__desc
+		animation-delay: 0.3s
+		transition: 0.5s transform
+
+	&__msg
+		margin-bottom: 30px

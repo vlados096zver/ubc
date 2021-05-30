@@ -1,0 +1,52 @@
+@import 'responsive'
+
+.user
+	background-color: #1e1d24
+	padding-top: 10px
+	+media(sm)
+		padding-top: 25px
+		padding-bottom: 20px
+	+media(smx)
+		padding-top: 90px
+
+	&__wrap
+		display: flex
+		flex-wrap: wrap
+		margin: 0 -10px
+		+media(sm)
+			flex-direction: column
+			align-items: center
+			margin: 0px
+
+	&__item
+		display: flex
+		align-items: center
+		margin: 0 10px
+		margin-bottom: 10px
+		+media(sm)
+			margin: 0px
+			margin-bottom: 15px
+
+		a.user__box
+			&:not(:last-child)
+				margin-right: 5px
+
+			&:hover
+				color: #4f9499
+
+	&__icon
+		width: 14px
+		height: 14px
+		margin-right: 6px
+		svg
+			display: block
+			fill: #fff
+			width: 100%
+			height: 100%
+
+	&__box
+		display: block
+		font-size: 12px
+		color: #fff
+		font-weight: 300
+		transition: 0.3s color

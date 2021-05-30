@@ -1,0 +1,158 @@
+@import 'responsive'
+
+.recall
+	padding-top: 70px
+	padding-bottom: 80px
+	background-color: #e8e8e8
+	&__title
+		max-width: 280px
+		margin: 0 auto
+		font-size: 25px
+		line-height: 1.3
+		color: #000
+		text-align: center
+		padding-bottom: 20px
+		font-weight: 800
+
+	&__wrap
+		margin: 0 -20px
+		+media(sm)
+			margin: 0px
+		
+	&__item
+		position: relative
+		margin: 0 20px
+		+media(sm)
+			margin: 0px
+
+	&__desc
+		position: relative
+		padding: 30px
+		padding-top: 75px
+		padding-bottom: 25px
+		background-color: #fff
+		margin-bottom: 25px
+		+media(mdx)
+			padding: 20px
+			padding-top: 75px
+			padding-bottom: 25px
+		&:after,
+		&:before
+			position: absolute
+			content: ' '
+
+		&:after
+			top: 25px
+			left: 30px
+			width: 30px
+			height: 30px
+			background-image: url(../img/icons/mark.svg)
+			background-size: 30px
+
+		&:before
+			bottom: -10px
+			left: 30px
+			width: 0px
+			height: 0px
+			border-style: solid
+			border-width: 10px 10px 0 10px
+			border-color: #fff transparent transparent transparent
+
+		p
+			font-size: 14px
+			line-height: 1.6
+			margin-bottom: 25px
+			font-weight: 300
+
+	&__inner
+		display: flex
+		align-items: center
+
+	&__icon
+		width: 76px
+		height: 76px
+		display: flex
+		align-items: center
+		img
+			display: block
+			width: 100%
+			height: 100%
+			object-fit: cover
+
+	&__content
+		width: calc(100% - 76px)
+		padding-left: 20px
+
+	&__subtitle
+		font-size: 16px
+		line-height: 1.44
+		color: #20202c
+		text-transform: capitalize
+		font-weight: 600
+
+	&__block
+		font-size: 14px
+		line-height: 1.6
+		color: #20202c
+		font-weight: 300
+
+	&__row
+		position: relative
+		overflow: hidden
+		&:hover
+			.recall__btn--dir_left
+				transform: translateX(30px)
+
+			.recall__btn--dir_right
+				transform: translateX(-30px)
+		
+	&__wrap-btn
+		position: absolute
+		width: 100%
+		top: calc(50% - 100px)
+		display: flex
+		justify-content: space-between
+
+	&__btn
+		cursor: pointer
+		position: relative
+		display: block
+		width: 44px
+		height: 44px
+		background-color: #68bec4
+		border-radius: 50%
+		color: #ffffff
+		border: 1px dotted #68bec4
+		outline: none
+		transition: 0.3s background-color, 0.3s transform, 0.3s opacity
+		transition-timing-function: ease-out
+		&:hover
+			background-color: #f6f6f6
+			&:after
+				border-color: #68bec4
+
+		&--dir_left
+			transform: translateX(-100%)
+
+		&--dir_right
+			transform: translateX(100%)
+
+		&--dir_left,
+		&--dir_right
+			&:after
+				position: absolute
+				content: ' '
+				width: 10px
+				height: 10px
+				top: calc(50% - 5px)
+				left: calc(50% - 3px)
+				border-left: 4px solid #fff
+				border-top: 4px solid #fff
+				transform: rotate(-45deg)
+				transition: 0.3s border
+
+		&--dir_right
+			&:after
+				border: none
+				border-right: 4px solid #fff
+				border-bottom: 4px solid #fff

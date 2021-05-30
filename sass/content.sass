@@ -1,0 +1,27 @@
+@import 'responsive'
+
+.content
+	background-color: #68bec4
+	padding: 60px 0
+	+media(md)
+		padding: 40px 0
+
+	&__title
+		font-size: 39px
+		line-height: 1.4
+		color: #fff
+		padding-bottom: 3px
+		font-weight: 300
+		+media(md)
+			line-height: 1.3
+			text-align: center
+
+	&__text
+		padding-bottom: 5px
+		p
+			font-size: 14px
+			line-height: 1.6
+			color: #fff
+			font-weight: 300
+			&:not(:last-child)
+				padding-bottom: 2em

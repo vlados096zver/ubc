@@ -1,0 +1,33 @@
+@import 'responsive'
+
+.elem
+	padding: 80px 0
+	&__wrap
+		display: flex
+		flex-wrap: wrap
+
+	&__item	
+		&--pic
+			width: 500px
+			+media(mdx)
+				width: 100%
+				max-width: 500px
+				margin: 0 auto
+			img
+				display: block
+				width: 100%
+
+		&--content
+			width: calc(100% - 500px)
+			padding-right: 70px
+			+media(mdx)
+				width: 100%
+				padding-right: 0px
+
+	&__desc
+		p
+			font-size: 14px
+			line-height: 1.6
+			color: #686868
+			padding-bottom: 2em
+			font-weight: 300

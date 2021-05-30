@@ -1,0 +1,304 @@
+@import 'responsive'
+
+.portfolio
+	position: relative
+	z-index: 5
+	background-color: #fff
+	padding-bottom: 75px
+	&__wrap
+		display: flex
+		flex-wrap: wrap
+		margin-top: 30px
+
+	&__item
+		cursor: pointer
+		position: relative
+		overflow: hidden
+		display: block
+		width: calc(100% / 3)
+		background-repeat: no-repeat
+		background-size: cover
+		min-height: 400px
+		transition-delay: .05s
+		+media(mdx)
+			width: calc(100% / 2)	
+		+media(sm)
+			width: 100%	
+		&:after
+			position: absolute
+			content: ' '
+			width: 1px
+			height: 100%
+			top: 0
+			left: 0
+			transition: 0.3s background-color	
+
+		&:hover
+			&:after
+				width: 100%
+				background: rgba(0, 0, 0, 0.9)
+				animation: hide 1s forwards
+				transition: 0.4s linear
+			img
+				filter: none
+				transform: translateX(-20px)
+
+			.portfolio__label,
+			.portfolio__title,
+			.portfolio__desc,
+			.portfolio__count
+				opacity: 1
+				transform: translateX(0%)
+
+			.portfolio__icon i
+				opacity: 1
+				animation: swing 1s linear forwards
+
+
+	&__image
+		position: absolute
+		content: ' '
+		top: 0px
+		left: 0px
+		width: calc(100% + 40px)
+		height: 100%
+		img
+			display: block	
+			width: 100%
+			height: 100%	
+			object-fit: cover
+			filter: grayscale(100%)
+			transition: 0.3s filter, 0.3s transform
+
+	&__block
+		position: relative
+		z-index: 5
+		padding: 20px	
+
+	&__icon
+		position: relative
+		width: 30px
+		height: 30px
+		display: block
+		margin: 0 auto
+		margin-bottom: 34px
+		i
+			display: block
+			width: 100%
+			color: #fff
+			opacity: 0
+			font: normal normal normal 34px/1 'nc-icon-outline'
+			transition: 0.34s linear
+			transform-origin: 50% top
+			transition-delay: 0.2s
+
+	&__label
+		display: inline-block
+		font-size: 10px	
+		color: #fff
+		background-color: #68bec4
+		text-transform: uppercase
+		padding: 7px 9px
+		margin-bottom: 64px
+		transform: scale(1.1)
+		opacity: 0
+		transform: translateX(-100%)
+		font-weight: 600	
+		transition: all 0.2s ease-in
+
+	&__title
+		font-size: 16px
+		line-height: 1.35
+		font-weight: 600
+		margin-bottom: 12px
+
+	&__desc
+		padding-bottom: 30px	
+		p
+			font-size: 13px	
+			line-height: 1.6	
+			color: #fff
+			font-weight: 300	
+
+
+	&__count
+		font-size: 16px	
+		line-height: 1.58	
+		color: #fff
+		font-weight: 300	
+		span
+			padding-right: 5px	
+
+	&__title,
+	&__desc,
+	&__count
+		color: #fff
+		text-align: center
+		transform: translateX(-100%)
+		opacity: 0
+		transition: 0.3s opacity, 0.3s transform
+
+	&--page
+		padding-top: 78px
+		padding-bottom: 70px
+		.portfolio__wrap
+			margin: 0 -3px
+			+media(sm)
+				margin: 0px
+
+		.portfolio__item
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			width: calc(100% / 3 - 6px)
+			margin: 0 3px
+			+media(mdx)
+				width: calc(100% / 2 - 6px)
+			+media(sm)
+				width: 100%
+				margin: 0px
+				margin-bottom: 6px
+
+	&__name	
+		font-size: 20px
+		line-height: 1.3
+		color: #20202c
+		letter-spacing: 0.8px
+		text-align: center
+		padding-bottom: 25px
+		font-weight: 800
+		+media(lgsm)
+			font-size: 15px
+
+	&__place
+		font-size: 14px
+		line-height: 1.6
+		color: #686868
+		text-align: center
+		padding-bottom: 25px
+		font-weight: 300
+
+	&--about
+		padding-top: 70px
+		padding-bottom: 40px
+
+
+@keyframes swing
+	0% 
+		transform: rotate(-30deg)
+
+	30%
+		transform: rotate(30deg)
+
+	50% 
+		transform: rotate(-20deg)
+
+	70%
+		transform: rotate(20deg)
+	100%
+		transform: rotate(0deg)
+
+@keyframes hide
+	0%
+		opacity: 1
+	100% 
+		opacity: 0
+
+.gallery
+
+	.lg-outer 
+		.lg-thumb-item
+			border: none
+			outline: none
+			transition: 0.3s opacity
+			&.active
+				opacity: 0.2
+
+			&:hover
+				opacity: 0.2
+
+		.lg-prev:after,
+		.lg-next:before
+			position: relative
+			color: #fff
+			font-size: 12px
+			top: -3px
+			font-family: 'nc-icon-mini'
+			transition: 0.3s color
+
+		.lg-prev
+			&:after
+				content: '\e903'
+
+			&:hover
+				background-color: #fff
+				&:after
+					color: #68bec4
+			
+		.lg-next
+			&:before
+				content: '\e904'
+
+			&:hover
+				background-color: #fff
+				&:before
+					color: #68bec4
+
+	.lg-prev,
+	.lg-next
+		width: 44px
+		height: 44px
+		background-color: #68bec4
+		border-radius: 50%
+		transition: 0.3s background-color
+
+	.lg-progress-bar .lg-progress
+		background-color: #68bec4
+
+	.lg-group
+		display: flex	
+		flex-direction: row-reverse
+		align-items: center
+		margin-top: 5px
+
+	.lg-toolbar .lg-icon
+		display: block	
+		float: none
+		width: 14px	
+		font-size: 14px
+		margin: 0 8px
+		color: #fff
+		&:hover
+			color: #68bec4
+
+	.lg-img-wrap
+		padding: 0 5px
+
+	.lg-outer 
+		.lg-icon
+			font-family: 'nc-icon-mini' !important
+			&.lg-fullscreen
+				&:after
+					content: '\ea83'
+
+			&.lg-download
+				&:after
+					content: '\e95d'
+
+			&.lg-close
+				&:after
+					content: '\ea18'
+
+			&.lg-autoplay-button
+				&:after
+					content: '\ec0f'
+
+		.lg-thumb-outer
+			background-color: transparent
+
+		.lg-thumb-item
+
+	.lg-backdrop
+		background-color: rgba(32,32,44,0.85)
+	

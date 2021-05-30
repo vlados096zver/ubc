@@ -1,0 +1,87 @@
+@import 'responsive'
+
+.nav-links
+	display: flex
+	align-items: center
+	position: relative
+	padding-bottom: 85px
+	+media(md)
+		justify-content: center
+	+media(sm)
+		padding-bottom: 50px
+	 
+.navigation 
+	position: relative
+	a, span
+		text-decoration: none
+		font-size: 16px
+		line-height: 1.2
+		color: #000
+	
+.page-numbers
+	cursor: pointer
+	display: block
+	text-align: center
+	max-width: 45px
+	width: 100%
+	font-size: 14px
+	font-weight: 300
+	padding: 12px 0px
+	color: #686868
+	border: 1px solid #e3e2e7
+	font-weight: 300
+	transition: 0.3s background-color, 0.3s color
+	&:not(.next)
+		margin-right: 20px
+
+	&:first-child
+		margin-right: 10px
+
+	&.current
+		background-color: #68bec4
+		color: #fff
+
+	&:hover
+		background-color: #68bec4
+		color: #fff
+
+
+	&.next
+		cursor: pointer
+		position: relative
+		width: 50px
+		height: 25px
+		max-width: initial
+		font-size: 12px
+		border: none
+		outline: none
+		padding: 0px
+		background-color: #fff
+		font-weight: 600
+		transition: 0.3s color
+		
+		&:after
+			position: absolute
+			content: ' '
+			width: 10px
+			height: 10px
+			top: calc(50% - 5px)
+			right: 0px
+			border-right: 2px solid #292929
+			border-bottom: 2px solid #292929
+			transform: rotate(-45deg)
+			transition: 0.3s border
+
+		&:before
+			position: absolute
+			content: 'next'
+			transform: none
+			left: 0px
+			top: 50%
+			transform: translateY(-50%)
+			text-transform: uppercase
+
+		&:hover
+			color: #4f9499
+			&:after
+				border-color: #4f9499

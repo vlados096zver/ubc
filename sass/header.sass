@@ -1,0 +1,466 @@
+@import 'responsive'
+
+.main-header
+	&__wrap
+		position: relative
+		display: flex
+		align-items: center
+		+media(md)
+			flex-wrap: wrap
+			flex-direction: column
+
+	&__holder
+		display: flex
+		align-items: center
+		margin-right: auto
+		+media(md)
+			margin: 0 auto
+			margin-bottom: 20px
+		+media(smx)
+			margin-bottom: 5px
+		+media(xxs)
+			flex-direction: column
+
+	&__inner
+		border-bottom: 1px solid rgba(210,210,211,0.5)
+		padding: 30px 0px
+		color: #fff
+		+media(md)
+			padding-top: 20px
+			padding-bottom: 30px
+		+media(smx)
+			background-color: #20202c
+			border: none
+			padding-bottom: 15px
+
+	&__logo
+		display: block
+		max-width: 188px
+		width: 100%
+		border-right: 1px solid rgba(210,210,211,0.5)
+		padding-right: 25px
+		+media(xxs)
+			margin-bottom: 6px
+
+	&__desc
+		font-size: 14px
+		line-height: 1
+		color: #fff
+		padding-left: 25px
+		font-weight: 500
+		+media(xxs)
+			padding-left: 0px
+
+	&__menu
+		display: flex
+		align-items: center
+		+media(smx)
+			position: fixed
+			z-index: 12
+			top: 0px
+			left: 0px
+			width: 100%
+			flex-direction: column
+			align-items: flex-start
+			pointer-events: none
+
+	&__row
+		display: flex
+		align-items: center
+		transition: 0.3s transform
+		+media(smx)
+			flex-direction: column
+			align-items: flex-start
+			max-width: 70%
+			width: 100%
+			padding-top: 20px
+			height: 100vh
+			transform: translateX(-100%)
+			background-color: rgba(17, 17, 17, 0.98)
+
+		&--active
+			+media(smx)
+				transform: translateX(0)
+				opacity: 1
+
+	&__list
+		display: flex
+		align-items: center
+		+media(smx)
+			flex-direction: column
+			align-items: flex-start
+			width: 100%
+			padding: 0 20px
+		li
+			position: relative
+			margin: 0 13px
+			+media(sm)
+				margin: 0 10px
+			+media(smx)
+				width: 100%
+				margin: 0px
+				pointer-events: auto
+			&:hover 
+				.submenu
+					display: block
+					opacity: 1
+					visibility: visible
+					+media(smx)
+						display: none
+				.main-header__link
+					color: #68bec4
+
+				.main-header__link--decor:after
+					border-color: #68bec4	
+
+		.main-header__level
+			position: relative
+			align-items: center
+			+media(smx)
+				display: block
+				margin-bottom: 8px
+
+	&__link
+		display: block
+		font-size: 14px
+		color: #fff
+		font-family: "Montserrat"
+		text-transform: capitalize
+		font-weight: 600
+		transition: 0.3s color
+		+media(smx)
+			margin-bottom: 8px
+			font-weight: 300
+		&:hover
+			color: #68bec4
+			&:after
+				border-color: #68bec4
+
+		&--add
+			padding-right: 15px
+			+media(smx)
+				padding-right: 0px
+				margin: 0px
+
+		&--decor
+			display: block
+			cursor: pointer
+			position: absolute
+			top: -2px
+			right: -10px
+			width: 20px
+			height: 20px
+			+media(smx)
+				position: absolute
+				right: 0px
+				top: -5px
+			&:after
+				position: absolute
+				content: ' '
+				width: 6px
+				height: 6px
+				top: calc(50% - 3px)
+				left: calc(50% - 3px)
+				border-right: 3px solid #fff
+				border-bottom: 3px solid #fff
+				transform: rotate(45deg)
+				transition: 0.3s border, 0.3s transform
+				+media(smx)
+					width: 12px
+					height: 12px
+					top: calc(50% - 6px)
+					left: calc(50% - 6px)
+					border-right: 4px solid #fff
+					border-bottom: 4px solid #fff
+
+		&--show
+			.main-header__link--decor:after
+				+media(smx)
+					transform: rotate(45deg) scale(-1)
+					top: 10px
+
+		&--active
+			color: #68bec4
+			&+.main-header__link--decor
+				&:after
+					border-color: #68bec4 
+
+
+	&__col
+		display: none
+		+media(lgsm)	
+			display: block
+		+media(smx)
+			display: none
+
+		&:hover 
+			.points
+				display: block
+				opacity: 1
+				visibility: visible
+
+			.main-header__more
+				color: #68bec4
+
+			.main-header__more:after
+				border-color: #68bec4
+
+	&__more
+		position: relative
+		z-index: 6
+		cursor: pointer
+		display: inline-block
+		font-size: 14px
+		color: #fff
+		letter-spacing: 0.56px
+		background-color: transparent
+		border: none
+		outline: none
+		padding: 0px
+		padding-right: 18px
+		margin-left: 25px
+		font-weight: 600
+		transition: 0.3s color	
+		&:after
+			position: absolute
+			content: ' '
+			width: 6px
+			height: 6px
+			top: calc(50% - 5px)
+			right: 0px
+			border-right: 3px solid #fff
+			border-bottom: 3px solid #fff
+			transform: rotate(45deg)
+			transition: 0.3s border
+
+.language-chooser
+	position: relative
+	z-index: 5
+	display: flex
+	align-items: center
+	padding-left: 10px
+	+media(smx)
+		flex-direction: column
+		padding-left: 20px
+
+	li
+		font-size: 0px
+		pointer-events: auto
+		+media(smx)
+			margin-bottom: 10px
+		a
+			display: inline-block
+			color: #ffff
+			&:hover
+				text-decoration: underline
+				
+		&.active a
+			color: #fff
+			font-weight: bold
+			&:hover
+				text-decoration: none
+
+	.lang-ua a
+		width: 16px
+		height: 11px
+		background-image: url(../img/icons/ukraine-logo.svg)
+		background-size: 16px 11px
+		background-repeat: no-repeat
+		margin-right: 25px
+		+media(smx)
+			margin-right: 0px
+
+	.lang-en a
+		width: 16px
+		height: 11px
+		background-image: url(../img/icons/united-kingdom.svg)
+		background-size: 16px 11px
+		background-repeat: no-repeat
+
+.submenu, 
+.points
+	position: absolute
+	display: none
+	opacity: 0
+	visibility: hidden
+	z-index: 4
+	top: calc(100%  + 20px)
+	left: 0px
+	width: 245px
+	background-color: #20202c
+	padding: 20px 30px
+	padding-bottom: 15px
+	transition: 0.3s opacity
+	+media(smx)
+		position: static
+		opacity: 1
+		visibility: visible
+		padding: 5px 13px
+		background-color: transparent
+	&:after
+		position: absolute
+		content: ' '
+		z-index: 3
+		top: -22px
+		left: 0px
+		width: 100%
+		height: 50px
+		background-color: transparent
+		+media(smx)
+			display: none
+	li
+		margin: 0px
+		a
+			position: relative
+			display: inline-block
+			font-size: 14px
+			line-height: 1.3
+			color: #686868
+			text-transform: capitalize
+			margin-bottom: 10px
+			font-weight: 300
+			transition: 0.3s color, 0.3s padding
+			+media(smx)
+				color: #ffff
+			&:after
+				position: absolute
+				content: ' '
+				width: 8px
+				height: 8px
+				top: 50%
+				left: 0px
+				border-left: 3px solid #68bec4
+				border-top: 3px solid #68bec4
+				transform: translateY(-50%) translateX(-10px) rotate(-45deg)
+				opacity: 0
+				transition: 0.3s transform, 0.3s opacity
+				+media(sm)
+					display: none
+
+			&:hover
+				padding-left: 15px
+				color: #68bec4
+				+media(sm)
+					padding-left: 0px
+				&:after
+					transform: translateY(-50%) translateX(0) rotate(-45deg)
+					opacity: 1
+
+	.submenu__link--active
+		padding-left: 15px
+		color: #68bec4
+		&:after
+			transform: translateY(-50%) translateX(0) rotate(-45deg)
+			opacity: 1
+		&:hover
+			padding-left: 15px
+
+.points
+	top: calc(100%  + 10px)
+	left: initial
+	right: 0px
+	+media(md)
+		top: calc(100%  + 20px)
+
+.submenu
+	+media(smx)
+		position: static
+		width: auto
+		transform: none
+	
+.mobile-wrap
+	display: none
+	align-items: center
+	justify-content: space-between
+	pointer-events: auto
+	+media(smx)
+		display: flex
+		width: 100%
+		background-color: #000000
+		padding: 20px
+		padding-bottom: 22px
+
+.line-burger
+	display: block
+	position: absolute
+	top: 50%
+	left: 0
+	width: 18px
+	height: 2px
+	background-color: #fff
+	transition: 0.5s width
+	&:after,
+	&:before
+		content: ''
+		position: absolute
+		width: 18px
+		height: 2px
+		background-color: #fff
+		left: 0
+		transition: 0.5s
+	&:after
+		top: calc(100% + 4px)
+	&:before
+		bottom: calc(100% + 4px)
+
+.line-active
+	width: 0
+	&:after
+		top: 7px
+		transform: rotate(-45deg)
+		transform-origin: 0 0
+	&:before
+		bottom: 7px
+		transform: rotate(45deg)
+		transform-origin: 0 100%
+
+.main-nav__toggle
+	position: relative
+	cursor: pointer
+	display: none
+	+media(md)
+		display: flex
+		align-items: center
+		width: 18px
+		height: 14px
+
+.toggler
+	cursor: pointer
+	position: relative
+	width: 18px
+	height: 2px
+	background-color: #fff
+	transition: background-color .1s
+	border: none
+	outline: none
+	&::before,
+	&::after 
+		content: ''
+		position: absolute
+		width: inherit
+		height: inherit
+		background-color: #fff
+		transition: transform .1s ease-in, top .1s linear .1s
+		left: 0
+
+	&::before
+		top: 7px
+
+	&::after
+		top: -7px
+
+
+	&--active
+		background-color: transparent
+		transition: background-color .1s
+		&::before,
+		&::after 
+			background-color: white
+			top: 0
+			transition: top .1s linear, transform .1s ease-in .1s
+
+		&::before
+			transform: rotate(45deg)
+
+		&::after
+			transform: rotate(-45deg)
