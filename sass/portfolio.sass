@@ -106,14 +106,25 @@
 		font-weight: 600	
 		transition: all 0.2s ease-in
 
+	&__title,
+	&__desc,
+	&__count
+		color: #fff
+		text-align: center
+		transform: translateX(-100%)
+		opacity: 0
+		transition: 0.3s opacity, 0.3s transform
+
 	&__title
 		font-size: 16px
 		line-height: 1.35
 		font-weight: 600
 		margin-bottom: 12px
+		transition-delay: 0.17s
 
 	&__desc
 		padding-bottom: 30px	
+		transition-delay: 0.15s
 		p
 			font-size: 13px	
 			line-height: 1.6	
@@ -125,18 +136,12 @@
 		font-size: 16px	
 		line-height: 1.58	
 		color: #fff
+		transition-delay: 0.45s
 		font-weight: 300	
 		span
 			padding-right: 5px	
 
-	&__title,
-	&__desc,
-	&__count
-		color: #fff
-		text-align: center
-		transform: translateX(-100%)
-		opacity: 0
-		transition: 0.3s opacity, 0.3s transform
+
 
 	&--page
 		padding-top: 78px
@@ -153,6 +158,7 @@
 			align-items: center
 			width: calc(100% / 3 - 6px)
 			margin: 0 3px
+			margin-bottom: 6px
 			+media(mdx)
 				width: calc(100% / 2 - 6px)
 			+media(sm)
@@ -210,6 +216,7 @@
 	.lg-outer 
 		.lg-thumb-item
 			border: none
+			border-radius: 0px
 			outline: none
 			transition: 0.3s opacity
 			&.active
@@ -223,7 +230,7 @@
 			position: relative
 			color: #fff
 			font-size: 12px
-			top: -3px
+			top: -4px
 			font-family: 'nc-icon-mini'
 			transition: 0.3s color
 

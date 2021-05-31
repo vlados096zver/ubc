@@ -8,8 +8,11 @@
 	
 	&__holder
 		transform: translateX(-100%)
+		opacity: 0
 		animation-delay: 0.3s
-		transition: 0.5s transform
+		transition: 1.25s transform, 1.25s opacity
+		&.animate
+			opacity: 1
 
 	&__wrap
 		display: flex

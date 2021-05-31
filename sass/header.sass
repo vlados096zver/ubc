@@ -283,7 +283,7 @@
 	display: none
 	opacity: 0
 	visibility: hidden
-	z-index: 4
+	z-index: 6
 	top: calc(100%  + 20px)
 	left: 0px
 	width: 245px
@@ -329,11 +329,12 @@
 				height: 8px
 				top: 50%
 				left: 0px
-				border-left: 3px solid #68bec4
-				border-top: 3px solid #68bec4
+				border-right: 3px solid #68bec4
+				border-bottom: 3px solid #68bec4
 				transform: translateY(-50%) translateX(-10px) rotate(-45deg)
 				opacity: 0
 				transition: 0.3s transform, 0.3s opacity
+				transition-timing-function: linear
 				+media(sm)
 					display: none
 

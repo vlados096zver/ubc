@@ -67,6 +67,7 @@
 		appearance: none
 		font-size: 14px
 		color: #686868
+		background-color: #fff
 		padding: 10px 25px
 		border: 1px solid #e3e2e7
 		option
@@ -83,15 +84,19 @@
 
 	&__desc
 		transform: translateX(100%)
+		opacity: 0
 		+media(mdx)
 			max-width: 860px
 			padding: 0 15px
 			margin: 0 auto
 
+		&.animate
+			opacity: 1
+
 	&__map,
 	&__desc
 		animation-delay: 0.3s
-		transition: 0.5s transform
+		transition: 1.25s transform, 1.25s opacity
 
 	&__msg
 		margin-bottom: 30px

@@ -84,16 +84,25 @@ $(document).ready(function() {
 
         download: true,
         controls: true,
+
+        toggleThumb: true,
+        showMaximizeIcon: true,
         mobileSettings: {
           controls: true,
           download: true,
           showCloseIcon: true,
           rotate: true,
+
+          toggleThumb: true,
+          showMaximizeIcon: true,
         }
       }
+
+
     );
 
   }
+
 
   if ($('#doc-block').length > 0) {
 
