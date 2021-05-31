@@ -603,20 +603,6 @@ img {
 	height: 0px;
 }
 
-.loaded {
-	overflow-x: hidden;
-	overflow-y: visible;
-}
-
-.loaded .preloader {
-	transition: 2s opacity;
-	opacity: 0;
-}
-
-.lg-on {
-	overflow: hidden;
-}
-
 .main {
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -3804,7 +3790,22 @@ img {
 	width: 100%;
 	height: 100%;
 	background-color: #ffffff;
+	pointer-events: none;
 	transition: 0.3s opacity;
+}
+
+.loaded {
+	overflow-x: hidden;
+	overflow-y: visible;
+}
+
+.loaded .preloader {
+	transition: 2s opacity;
+	opacity: 0;
+}
+
+.lg-on {
+	overflow: hidden;
 }
 
 .kart-loader {
@@ -3812,6 +3813,7 @@ img {
 	margin: auto;
 	display: block;
 	left: 50%;
+	pointer-events: none;
 	top: 50%;
 }
 
