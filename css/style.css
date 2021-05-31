@@ -2147,6 +2147,13 @@ img {
 	margin-bottom: 30px;
 }
 
+.contacts__error {
+	font-size: 12px;
+	color: #ff3543;
+	padding-top: 5px;
+	font-weight: 400;
+}
+
 .main-footer {
 	background-color: #20202c;
 }
@@ -2680,6 +2687,14 @@ img {
 	color: #686868;
 	margin-bottom: 12px;
 	font-weight: 300;
+}
+
+.write-us__error {
+	font-size: 12px;
+	color: #ff3543;
+	padding-top: 5px;
+	padding-bottom: 4px;
+	font-weight: 400;
 }
 
 .doc {
