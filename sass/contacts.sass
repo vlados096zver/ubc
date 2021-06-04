@@ -1,6 +1,7 @@
 @import 'responsive'
 
 .contacts
+	overflow: hidden
 	margin-bottom: 35px
 	&__wrap
 		display: flex
@@ -15,6 +16,9 @@
 		+media(mdx)
 			width: 100%
 			margin: 0px
+		&:first-child
+			+media(mdx)
+				margin-bottom: 40px
 
 	&__label
 		display: inline-block
@@ -30,6 +34,7 @@
 
 	&__row
 		display: flex
+		align-items: flex-end
 		flex-wrap: wrap
 		padding-top: 40px
 		margin: 0 -20px
@@ -90,12 +95,9 @@
 			padding: 0 15px
 			margin: 0 auto
 
-		&.animate
-			opacity: 1
-
 	&__map,
 	&__desc
-		animation-delay: 0.3s
+		opacity: 0
 		transition: 1.25s transform, 1.25s opacity
 
 	&__msg
@@ -106,3 +108,7 @@
 		color: #ff3543
 		padding-top: 5px
 		font-weight: 400
+
+.animate
+	opacity: 1
+	transform: none

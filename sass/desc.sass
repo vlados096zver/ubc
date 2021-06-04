@@ -77,7 +77,6 @@
 			margin: 0px
 			padding-bottom: 2em
 			li
-				list-style-position: inside
 				font-size: 14px
 				line-height: 1.6
 				color: #686868
@@ -87,6 +86,7 @@
 
 		ul
 			li
+				list-style-position: outside
 				position: relative
 				padding-left: 25px
 				&:after
@@ -101,6 +101,10 @@
 					transform: rotate(45deg)
 					width: .7em
 					height: 1.2em
+
+		ol
+			li
+				list-style-position: inside
 
 	&__text
 		p

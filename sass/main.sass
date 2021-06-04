@@ -29,22 +29,24 @@ img
 
 
 
-.main
-	background-size: cover
-	background-repeat: no-repeat
-	background-position: top center
-	transition: 0.3s background-image
-	&--inner
-		background-color: #20202c
+.main--inner
+	position: relative
+	margin-bottom: 110px
+	.main-header__inner
+		position: absolute
+		z-index: 2
+		top: 0px
+		left: 0px
+		right: 0px
+		background-color: transparent
+		+media(sm)
+			background-color: #20202c
 
 .container
 	max-width: 1200px
 	width: 100%
 	margin: 0 auto
 	padding: 0 20px
-
-.animate
-	animation: animateBlock 0.3s linear forwards
 
 
 .input
@@ -198,8 +200,9 @@ img
 	&--info
 		width: max-content
 		letter-spacing: 1.4px
+		padding: 14px 30px
+		padding-bottom: 15px
 		margin: 0 auto
-		margin-bottom: 65px
 		&:hover
 			background-color: #fff
 			color: #54595f

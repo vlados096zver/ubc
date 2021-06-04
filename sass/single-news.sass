@@ -76,8 +76,8 @@
 
 	&__box	
 		display: block
-		width: 20px
-		height: 20px
+		width: 14px
+		height: 14px
 		margin-bottom: 25px
 		+media(smdx)
 			margin: 0 16px
@@ -89,6 +89,7 @@
 			margin-bottom: 30px
 		i
 			display: block
+			font-size: 14px
 			color: #d0d0d4
 			transition: 0.3s color
 			font-family: 'nc-icon-mini'
@@ -255,12 +256,13 @@
 	&--blog
 		.single-news__wrap
 			width: calc(100% / 2 - 20px)
-			max-width: 500px
+			max-width: 100%
 			border: none
 			padding-bottom: 15px
 			margin: 0 10px
 			+media(md)
 				width: 100%
+				max-width: 500px
 				margin: 0px auto
 
 		.single-news__text

@@ -24,7 +24,6 @@ $(document).ready(function() {
     let points = $("ul.main-header__list li:not(ul.submenu li)").slice(-3);
 
     let screenWidth = $(window).outerWidth();
-    console.log(screenWidth);
     if (screenWidth < 1200 && screenWidth > 650) {
       points.each(function(index, elem) {
         $(elem).css({
@@ -80,27 +79,19 @@ $(document).ready(function() {
         autoplay: true,
         autoplayControls: true,
         counter: false,
-        addClass: 'gallery',
-
+        addClass: 'port-gallery',
         download: true,
         controls: true,
-
         toggleThumb: true,
-        showMaximizeIcon: true,
+
         mobileSettings: {
           controls: true,
           download: true,
           showCloseIcon: true,
           rotate: true,
-
-          toggleThumb: true,
-          showMaximizeIcon: true,
         }
       }
-
-
     );
-
   }
 
 
@@ -110,51 +101,38 @@ $(document).ready(function() {
     $('[data-fancybox="gallery"]').fancybox({
       buttons: [
         "slideShow",
-        "thumbs",
-        "zoom",
         "fullScreen",
+        "thumbs",
         "close"
       ],
       loop: false,
       arrows: true,
       infobar: false,
+
     });
 
   }
 
   const info = $('.info__wrap');
 
-  function showImage() {
-    let elem = $('.info__item.slick-current').attr('data-img');
-    let main = $('.main');
-    main.css("background-image", elem);
-  }
-
-  info.on('afterChange beforeChange init reInit', function(event, slick, currentSlide, nextSlide) {
-    showImage();
-  })
 
   info.slick({
     infinite: true,
-    // speed: 600,
+     speed: 400,
     slidesToShow: 1,
-    // autoplay: true,
-    //autoplaySpeed:5000,
     draggable: true,
-    fade: true,
+    fade: false,
     arrows: false,
     dots: true,
     dotsClass: 'info__dots-list',
+    cssEase: 'ease-in-out',
   });
 
   const reviews = $('.reviews__wrap');
   let arrowsReviews = $('.reviews__wrap-btn');
   reviews.slick({
     infinite: true,
-    // speed: 600,
     slidesToShow: 2,
-    // autoplay: true,
-    //autoplaySpeed:5000,
     draggable: true,
     fade: false,
     arrows: true,
@@ -173,10 +151,7 @@ $(document).ready(function() {
   let arrowsRecall = $('.recall__wrap-btn');
   recall.slick({
     infinite: true,
-    // speed: 600,
     slidesToShow: 3,
-    // autoplay: true,
-    //autoplaySpeed:5000,
     draggable: true,
     fade: false,
     arrows: true,
@@ -202,10 +177,7 @@ $(document).ready(function() {
   let arrowsNews = $('.news__wrap-btn');
   news.slick({
     infinite: true,
-    // speed: 600,
     slidesToShow: 1,
-    // autoplay: true,
-    //autoplaySpeed:5000,
     draggable: true,
     fade: false,
     arrows: true,
